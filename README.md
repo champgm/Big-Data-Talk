@@ -2,6 +2,9 @@ Big-Data-Talk
 =============
 The slides and any extra research/notes for my big data talk
 
+The set of files that this talk tours the building process of can be found here:
+https://github.com/apache/crunch/tree/master/crunch-core/src/main/java/org/apache/crunch/io/text/csv
+
 Info:
 =====
 The next Big Data Meetup will be Wednesday August 6, 2014 from 4-5 PM in the Innovations Campus 8bit Lounge.
