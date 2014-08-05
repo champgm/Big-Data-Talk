@@ -1,0 +1,59 @@
+Notes
+
+Story
+-Few months ago
+-End of iteration
+-Nathan (sub-team's manager) out of town
+-Everyone pick own JIRAs
+-Cache CSV files in HDFS 
+--Process them with crunch instead of on util node
+--CVX
+
+CSV Is Weird
+-4 records in list
+-3rd record has a bulleted list in one of its fields
+-WEIRD
+--CSV doesn't have to be "C"SV
+--Optional header rows
+--Any field in any file can be surrouneded by quotes, inside of which all sorts of weird things can take place, such as NEWLINES
+--Hadoop/crunch input formats are simple
+
+Hadoop
+-flow diagram, first three things, format, splits, record reader
+-Input format
+--split data
+--create record reader
+--(explain how csv record reader works)
+---Jump ahead 1 split
+---check if in record, mark for split
+-Record reader
+--parse split into records
+---Opens file, seeks to split
+---uses utility to parse record-by-record
+
+Input Format Summary
+-This is cool, but not easily configurable
+-Configuration requires setting config values in hadoop job configuration
+
+Using Crunch
+-Crunch takes care of configuration in a sane way
+-Take input parameters, set config, and use input format later
+
+Building Crunch
+-Start with Input Format
+-Add CSVFileSource 
+--Takes configuration options
+--Sets them
+--Uses its defined InputFormat to read the files
+-Add wrapper classes "Readable data" and "file reader factory"
+--Both wrappers for an iterator over the file
+
+Summary
+-File source
+--Mark input format for use
+--configures input format
+-Input Format
+--splits input file
+--configures record reader
+--iterates through a split's records
+
