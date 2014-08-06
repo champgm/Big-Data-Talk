@@ -6,7 +6,7 @@ Story
 -Nathan (sub-team's manager) out of town
 -Everyone pick own JIRAs
 -Cache CSV files in HDFS 
---Process them with crunch instead of on util node
+--Process them with crunch
 --CVX
 
 CSV Is Weird
